@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head itemscope itemtype="https://schema.org/WebSite">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title> new Bot </title>
+    {{ template "loadcss.html" . }}
+  </head>
+  <body>
+    {{ template "top-bar.html" . }}
+    <div class="column row">
+      
+      <div class="row">
+        <div class="large-8 medium-10  small-12 columns">
+          <h2  style="font-weight: bolder;">Bot Dashboard (alfaisal) </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-8 medium-10  small-12 columns">
+          <p> last trained: 29/08/2021 at 3:15 pm </p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <form name="nform" id="nform" style="" role="form" method="POST">
+        <div class="row">
+          <div class="large-4 medium-4  small-12 columns">
+            <p style="font-weight: bolder;" class="">Entities</p>
+            <a>  Edit -> </a>
+          </div>
+          
+          <div class="large-4 medium-4  small-12 columns">
+            <p style="font-weight: bolder;" class="">Domain</p>
+            <a>  Edit -> </a>
+          </div>
+          <div class="large-4 medium-4  small-12 columns">
+            <p style="font-weight: bolder;" class="">General bot information</p>
+            <a>  Edit -> </a>
+          </div>
+          <div class="large-4  small-12 columns">
+          </div>
+        </div>
+        
+        <br>
+        <br>
+        <div class="row">
+          <div class="large-2 medium-2  small-12 columns">
+            <button style="font-weight: bolder;" class="success button">Train</button>
+          </div>
+          
+          <div class="large-2 medium-2  small-12 columns">
+            <button style="font-weight: bolder;" class=" button">Start Chat</button>
+          </div>
+          <div class="large-2 medium-2  small-12 columns">
+            <button style="font-weight: bolder;" class="alert button">Delete</button>
+          </div>
+          <div class="large-4  small-12 columns">
+          </div>
+        </div>
+      </div>
+      <br>
+      {{ template "footer.html" . }}
+      <!-- placed at the end for faster loading -->
+      {{ template "loadjs.html" . }}
+    </body>
+  </html>

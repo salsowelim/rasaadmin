@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head itemscope itemtype="https://schema.org/WebSite">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title> new Bot </title>
+    {{ template "loadcss.html" . }}
+  </head>
+  <body>
+    {{ template "top-bar.html" . }}
+    <div class="column row">
+      
+      <div class="row">
+        <div class="large-8 medium-10  small-12 columns">
+          <h2  style="font-weight: bolder;">Create New Bot</h2>
+        </div>
+      </div>
+      <br>
+      <br>
+      <form name="nform" id="nform" style="" role="form" method="POST">
+        
+        <div class="row">
+          <div class="small-12 large-6 medium-4 columns">
+            <label style="font-weight: bolder; font-size:110%;">Bot name <span style="font-weight: bolder; color: red;">*</span>
+            <input type="text" name="bname" placeholder="letters & numbers only"> </input>
+          </label>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="large-2 medium-2  small-12 columns">
+          <button style="font-weight: bolder;" class="button">Save</button>
+        </div>
+        <div class="large-2 medium-2  small-12 columns">
+          <button style="font-weight: bolder;" class="secondary button">Cancel</button>
+        </div>
+        <div class="large-4  small-12 columns">
+        </div>
+      </div>
+    </div>
+    <br>
+    {{ template "footer.html" . }}
+    <!-- placed at the end for faster loading -->
+    {{ template "loadjs.html" . }}
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head itemscope itemtype="https://schema.org/WebSite">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title> RasaAdmin </title>
+    {{ template "loadcss.html" . }}
+  </head>
+  <body>
+    {{ template "top-bar.html" . }}
+    <div class="column row">
+      <div class="row">
+        <div class="large-8 medium-10  small-12 columns">
+          <p>Welcome, choose bot from the dropdown list, or create one. </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-4 medium-8  small-12 columns">
+        <select></select>
+      </div>
+      <div class="large-2 medium-2  small-12 columns">
+        <a style="font-weight: bolder;" class="success button">Load selected</a>
+      </div>
+      <div class="large-2 medium-2  small-12 columns">
+        <a href="/newbot/" style="font-weight: bolder;" class="button">Create new bot</a>
+      </div>
+      <div class="large-4  small-12 columns">
+      </div>
+    </div>
+  </div>
+  <br>
+  {{ template "footer.html" . }}
+  <!-- placed at the end for faster loading -->
+  {{ template "loadjs.html" . }}
+</body>
+</html>
