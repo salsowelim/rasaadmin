@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head itemscope itemtype="https://schema.org/WebSite">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title> Chat </title>
+    {{ template "loadcss.html" . }}
+  </head>
+  <body>
+    {{ template "top-bar.html" . }}
+    <div class="column row">
+      <div class="row">
+        <div class="large-8 medium-10  small-12 columns">
+          <h2  style="font-weight: bolder;">Chat</h2>
+        </div>
+      </div>
+      <div class="row">
+        <!-- https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js
+        https://forum.rasa.com/t/rasa-webchat-integration/19930/3
+        -->
+        <script>!(function () {
+        let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js"),
+        // Replace 1.x.x with the version that you want
+        (e.async = !0),
+        (e.onload = () => {
+        window.WebChat.default(
+        {
+        customData: { language: "en" },
+        embedded: true,
+        socketUrl: "https://bf-botfront.development.agents.botfront.cloud",
+        // add other props here
+        },
+        null
+        );
+        }),
+        t.insertBefore(e, t.firstChild);
+        })();
+        </script>
+      </div>
+      <br>
+    </div>
+    {{ template "footer.html" . }}
+    <!-- placed at the end for faster loading -->
+    {{ template "loadjs.html" . }}
+  </body>
+</html>

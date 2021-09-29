@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	//"html"
-	//"database/sql"
+	"database/sql"
 	"html/template"
 	"net/http"
 	"os"
@@ -16,6 +16,7 @@ import (
 )
 
 var db *sql.DB
+var selectedBotDetails []string //load selected bot to memory (name, filespath ... etc)
 
 type templData struct {
 	Title string
@@ -44,6 +45,12 @@ func newBotHandler(w http.ResponseWriter, r *http.Request) {
 	checkError(errr)
 }
 
+func chatHandler(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles("templates/chat.html", "templates/top-bar.html", "templates/footer.html", "templates/loadjs.html", "templates/loadcss.html")
+	errr := t.Execute(w, nil)
+	checkError(errr)
+}
+
 func error_handler(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles("templates/error.html", "templates/top-bar.html", "templates/footer.html", "templates/loadjs.html", "templates/loadcss.html")
 	errr := t.Execute(w, nil)
@@ -59,10 +66,11 @@ func checkError(err error) {
 
 func main() {
 	t := time.Now()
-	fmt.Println(t.Format("2006/01/02:15:04:05") + "[starting server]-")
+	fmt.Println(t.Format("2006/01/02:15:04:05") + "[starting server on port 5001]-")
 	//db = connectToDB()
 	http.Handle("/", http.HandlerFunc(mainHandler))
 	http.Handle("/botlist/", http.HandlerFunc(botListHandler))
+	http.Handle("/chat/", http.HandlerFunc(chatHandler))
 	http.Handle("/newbot/", http.HandlerFunc(newBotHandler))
 	http.Handle("/dashboard/", http.HandlerFunc(dashboardHandler))
 	http.Handle("/error/", http.HandlerFunc(error_handler))
